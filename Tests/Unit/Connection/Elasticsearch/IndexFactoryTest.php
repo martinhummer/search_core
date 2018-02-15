@@ -76,6 +76,11 @@ class IndexFactoryTest extends AbstractUnitTestCase
     public function typoScriptConfigurationIsProvidedToIndex()
     {
         $configuration = [
+            'connections' => [
+                'elasticsearch' => [
+                    'index' => 'typo3content',
+                ],
+            ],
             'analysis' => [
                 'analyzer' => [
                     'ngram4' => [
