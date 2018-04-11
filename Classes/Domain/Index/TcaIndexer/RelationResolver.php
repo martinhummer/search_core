@@ -37,7 +37,7 @@ class RelationResolver implements Singleton
     {
         foreach (array_keys($record) as $column) {
             // TODO: Define / configure fields to exclude?!
-            if ($column === 'pid') {
+            if ($column === 'pid' || $column === 'sys_language_uid' || $column === 'start_date' || $column === 'end_date') {
                 continue;
             }
 
