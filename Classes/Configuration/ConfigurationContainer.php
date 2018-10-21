@@ -60,7 +60,7 @@ class ConfigurationContainer implements ConfigurationContainerInterface
      */
     public function get(string $path)
     {
-        $value = ArrayUtility::getValueByPath($this->settings, $path);
+        $value = ArrayUtility::getValueByPath($this->settings, $path, '.');
 
         if ($value === null) {
             throw new InvalidArgumentException(
@@ -78,6 +78,6 @@ class ConfigurationContainer implements ConfigurationContainerInterface
      */
     public function getIfExists(string $path)
     {
-        return ArrayUtility::getValueByPath($this->settings, $path);
+        return ArrayUtility::getValueByPath($this->settings, $path, '.');
     }
 }
